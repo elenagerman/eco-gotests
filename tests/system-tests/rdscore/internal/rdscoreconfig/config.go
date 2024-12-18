@@ -384,6 +384,14 @@ type CoreConfig struct {
 	EgressServiceDeploy2NodeSelector EnvMapString `yaml:"rdscore_egress_service_2_node_selector" envconfig:"ECO_RDSCORE_EGRESS_SVC_2_NODE_SELECTOR"`
 	//nolint:lll,nolintlint
 	EgressServiceDeploy2IPAddrPool string `yaml:"rdscore_egress_service_deploy_2_ipaddr_pool" envconfig:"ECO_RDSCORE_EGRESS_SVC_DEPLOY_2_IPADDR_POOL"`
+	//nolint:lll,nolintlint
+	MetallbFRRContainerName string `yaml:"rdscore_metallb_frr_container_name" envconfig:"ECO_RDSCORE_METALLB_FRR_CONTAINER_NAME"`
+	//nolint:lll,nolintlint
+	MetallbFRRHostName string `yaml:"rdscore_metallb_frr_host_name" envconfig:"ECO_RDSCORE_METALLB_FRR_HOST_NAME"`
+	//nolint:lll,nolintlint
+	MetallbFRRHostUser string `yaml:"rdscore_metallb_frr_host_user" envconfig:"ECO_RDSCORE_METALLB_FRR_HOST_USER"`
+	//nolint:lll,nolintlint
+	MetallbFRRHostPass string `yaml:"rdscore_metallb_frr_host_pass" envconfig:"ECO_RDSCORE_METALLB_FRR_HOST_PASS"`
 }
 
 // NewCoreConfig returns instance of CoreConfig config type.

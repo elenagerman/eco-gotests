@@ -25,6 +25,11 @@ var _ = Describe(
 	ContinueOnFailure,
 	Label("rds-core-workflow"), func() {
 		Context("Configured Cluster", Label("clean-cluster"), func() {
+			It("Verify frr segregation",
+				Label("segregation"),
+				reportxml.ID("77997"),
+				rdscorecommon.TestFRRroute)
+
 			It("Verify MetalLB Graceful Restart - single IPv4 connection",
 				Label("metallb-graceful", "metallb-gr-single-ipv4"),
 				reportxml.ID("77997"),

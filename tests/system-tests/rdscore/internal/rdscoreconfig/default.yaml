@@ -153,3 +153,5 @@ rdscore_graceful_restart_service_ns: rds-graceful-app
 rdscore_graceful_restart_service_name: rds-graceful-app
 rdscore_graceful_restart_app_label: 'rds-app=rds-core-metallb-integration'
 rdscore_graceful_restart_service_port: '8080'
+# MetalLB frr segregation
+rdscore_metallb_frr_container_name: 'lb-oam'
