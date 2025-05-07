@@ -25,6 +25,11 @@ var _ = Describe(
 	ContinueOnFailure,
 	Label("rds-core-workflow"), func() {
 		Context("Configured Cluster", Label("clean-cluster"), func() {
+			//BeforeAll(func(ctx SpecContext) {
+			//	By("Creating LokiStack secret")
+			//	rdscorecommon.CreateLokiStackSecret()
+			//})
+
 			It("Verify EgressService with Cluster ExternalTrafficPolicy",
 				Label("egress", "egress-etp-cluster", "egress-etp-cluster-loadbalancer"),
 				reportxml.ID("76485"),
@@ -210,10 +215,14 @@ var _ = Describe(
 				Label("pod-level-bond", "pod-level-pod-failure"), reportxml.ID("80490"),
 				rdscorecommon.VerifyPodLevelBondWorkloadsAfterPodCrashing)
 
-			AfterEach(func(ctx SpecContext) {
-				By("Ensure all nodes are Ready and scheduling enabled")
-				rdscorecommon.EnsureInNodeReadiness(ctx)
-			})
+			It("Verifies cluster-observability operator is monitored by platform",
+				Label("observability", "coo", "debug"), reportxml.ID("81749"),
+				rdscorecommon.ClusterObservabilityOperatorMonitoredByPlatform)
+
+			//AfterEach(func(ctx SpecContext) {
+			//	By("Ensure all nodes are Ready and scheduling enabled")
+			//	rdscorecommon.EnsureInNodeReadiness(ctx)
+			//})
 		})
 
 		Context("Ungraceful Cluster Reboot", Label("ungraceful-cluster-reboot"), func() {

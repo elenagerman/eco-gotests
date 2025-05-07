@@ -39,4 +39,46 @@ const (
 
 	// MetalLBFRRContainerName name of the FRR container within a pod.
 	MetalLBFRRContainerName = "frr"
+
+	// COONamespace is a cluster-observability operator namespace.
+	COONamespace = "openshift-cluster-observability-operator"
+
+	// COOName is a cluster-observability operator name.
+	COOName = "cluster-observability-operator"
+
+	// COOServiceAccount is a cluster-observability serviceAccount name.
+	COOServiceAccount = "prometheus-k8s"
+
+	// COOSANamespace is a cluster-observability serviceAccount namespace.
+	COOSANamespace = "openshift-monitoring"
+
+	// ODFNamespace is an odf namespace.
+	ODFNamespace = "openshift-storage"
+
+	// CLONamespace is a clusterlogging operator namespace.
+	CLONamespace = "openshift-logging"
+
+	// CLOName is a clusterlogging operator name.
+	CLOName = "cluster-logging"
+
+	// CLODeploymentName is a clusterlogging operator deployment name.
+	CLODeploymentName = "cluster-logging-operator"
+
+	// CLOInstanceName is a clusterlogging instance name.
+	CLOInstanceName = "instance"
+
+	// LokiNamespace is a loki operator namespace.
+	LokiNamespace = "openshift-operators-redhat"
+
+	// LokiOperatorSubscriptionName is a loki operator subscription name.
+	LokiOperatorSubscriptionName = "loki-operator"
+
+	// LokiOperatorDeploymentName is a loki operator deployment name.
+	LokiOperatorDeploymentName = "loki-operator-controller-manager"
+
+	// LokiStackName is a lokiStack instance name.
+	LokiStackName = "logging-loki"
+
+	// KubeconfigPath is a path to the kubeconfig file on the hypervisor machine.
+	KubeconfigPath = "logging-loki"
 )

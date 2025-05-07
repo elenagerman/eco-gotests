@@ -227,9 +227,12 @@ type CoreConfig struct {
 	MetalLBLoadBalancerTwoIPv4 string `yaml:"rdscore_metallb_lb_two_ipv4" envconfig:"ECO_RDSCORE_METALLB_LB_TWO_IPV4"`
 	MetalLBLoadBalancerTwoIPv6 string `yaml:"rdscore_metallb_lb_two_ipv6" envconfig:"ECO_RDSCORE_METALLB_LB_TWO_IPV6"`
 
-	HypervisorHost string `yaml:"hypervisor_host" envconfig:"ECO_SYSTEM_TEST_HYPERVISOR_HOST"`
-	HypervisorUser string `yaml:"hypervisor_user" envconfig:"ECO_SYSTEM_TEST_HYPERVISOR_USER"`
-	HypervisorPass string `yaml:"hypervisor_pass" envconfig:"ECO_SYSTEM_TEST_HYPERVISOR_PASS"`
+	HypervisorHost       string `yaml:"hypervisor_host" envconfig:"ECO_SYSTEM_TEST_HYPERVISOR_HOST"`
+	HypervisorUser       string `yaml:"hypervisor_user" envconfig:"ECO_SYSTEM_TEST_HYPERVISOR_USER"`
+	HypervisorPass       string `yaml:"hypervisor_pass" envconfig:"ECO_SYSTEM_TEST_HYPERVISOR_PASS"`
+	HypervisorKubeconfig string `yaml:"hypervisor_kubeconfig" envconfig:"ECO_SYSTEM_TEST_HYPERVISOR_KUBECONFIG"`
+	//nolint:lll
+	HypervisorKubeadminPass string `yaml:"hypervisor_kubeadmin_password" envconfig:"ECO_SYSTEM_TEST_HYPERVISOR_KUBEADMIN_PASSWORD"`
 	//nolint:lll
 	WlkdSRIOVConfigMapDataOne EnvMapString `yaml:"rdscore_wlkd_sriov_cm_data_one" envconfig:"ECO_RDSCORE_SRIOV_CM_DATA_ONE"`
 	//nolint:lll
@@ -505,6 +508,8 @@ type CoreConfig struct {
 	PodLevelBondPodMacAddr string `yaml:"rdscore_pod_level_bond_pod_mac_addr" envconfig:"ECO_RDSCORE_POD_LEVEL_BOND_POD_MAC_ADDR"`
 	WorkerLabelListOption  metav1.ListOptions
 	FRRExpectedNodes       EnvSliceString `yaml:"rdscore_frr_expected_nodes" envconfig:"ECO_RDSCORE_FRR_EXPECTED_NODES"`
+	LokiSecretName         string         `yaml:"rdscore_loki_secret_name" envconfig:"ECO_RDSCORE_LOKI_SECRET_NAME"`
+	LokiObjectBucketClaim  string         `yaml:"rdscore_object_bucket_claim" envconfig:"ECO_RDSCORE_LOKI_OBJECT_BUCKET_CLAIM"`
 }
 
 // NewCoreConfig returns instance of CoreConfig config type.
